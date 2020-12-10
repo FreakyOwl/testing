@@ -17,7 +17,7 @@ jobs:
           name: Test
       - run:
           name: Run Linting
-          command: pylint scriptfortests.py || python pylint_exit.py $?
+          command: pylint scriptfortests.py || exit 0
              
 workflows:
   main:
