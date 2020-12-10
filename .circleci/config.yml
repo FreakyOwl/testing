@@ -17,11 +17,8 @@ jobs:
           name: Test
       - run:
           name: Run Linting
-          command: |
-              set +e
-              pipenv run pylint scriptfortests.py
-              echo "Debug"
-              exit 0
+          command: pylint scriptfortests.py
+             
 workflows:
   main:
     jobs:
