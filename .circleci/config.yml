@@ -9,6 +9,9 @@ jobs:
     steps:
       - checkout
       - python/install-deps
+      - run:
+          command: chmod +x manage.py
+          name: Permission
       - run:       
           command: ./manage.py test
           name: Test
