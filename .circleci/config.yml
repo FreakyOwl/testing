@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - python/install-deps
+      - python/pylint
       - run:
           command: chmod +x manage.py
           name: Permission
