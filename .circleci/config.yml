@@ -17,7 +17,10 @@ jobs:
           name: Test
       - run:
           name: Run Linting
-          command: pylint scriptfortests.py 
+          command: pylint scriptfortests.py
+      - run:
+          name: Testing
+          command: pytest test1.py  
              
 workflows:
   main:
