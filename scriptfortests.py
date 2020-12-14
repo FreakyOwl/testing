@@ -8,6 +8,9 @@ import json
 listofurls = open('123.txt', 'r')
 
 def filefun():
+    """
+    this is a docstring too
+    """
     listsoffriends = open('friendsurls.txt', 'w')
     domain = ''
     for line in listofurls:                 # получаем информацию о пользователях за один запрос
@@ -19,7 +22,7 @@ def filefun():
     for item in userinfo.get('response'):
         personid = str(item.get('id'))        # получаем ID пользователя
         with urllib.request.urlopen("https://api.vk.com/method/friends.get?user_id="+personid +
-        "&v=5.52&access_token=b1b6da65b1b6da65b1b6da6547b1c57304bb1b6b1b6da65eefec3e8bb3149f4bcc040dc")\
+   "&v=5.52&access_token=b1b6da65b1b6da65b1b6da6547b1c57304bb1b6b1b6da65eefec3e8bb3149f4bcc040dc")\
              as friendsurl:
             friendsinfo = json.load(friendsurl)     # получаем список друзей
         for friendid in friendsinfo.get('response').get('items'):   # формируем список url-ов друзей
