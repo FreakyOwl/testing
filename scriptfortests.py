@@ -15,9 +15,10 @@ def filefun():
     domain = ''
     for line in listofurls:                 # получаем информацию о пользователях за один запрос
         domain = domain+line[15:len(line)-1]+','  # получаем короткое название из url
-    with urllib.request.urlopen("https://api.vk.com/method/users.get?user_ids="+
-            domain[:len(domain)-1] +"&v=5.52&access_token=b1b6da65b1b6da65b1b6da6\
-            547b1c57304bb1b6b1b6da65eefec3e8bb3149f4bcc040dc") as userurl:
+    with urllib.request.urlopen("https://api.vk.com/method/users.get?user_ids=" +
+         domain[:len(domain) - 1] +
+   "&v=5.52&access_token=b1b6da65b1b6da65b1b6da6547b1c57304bb1b6b1b6da65eefec3e8bb3149f4bcc040dc")\
+             as userurl:
         userinfo = json.load(userurl)
     for item in userinfo.get('response'):
         personid = str(item.get('id'))        # получаем ID пользователя
