@@ -9,7 +9,7 @@ def getdata(filename):
     """
     this is a docstring too
     """
-    listofurls = open('filename', 'r')
+    listofurls = open(filename, 'r')
     domain = ''
     for line in listofurls:                 # получаем информацию о пользователях за один запрос
         domain = domain+line[15:len(line)-1]+','  # получаем короткое название из url
@@ -21,13 +21,12 @@ def getdata(filename):
     listofurls.close()
     return userinfo
 
-def getfriends():  
-    
+def getfriends():
     """
     also a docstring
     """
     userinfo = getdata('123.txt')
-    listsoffriends = open('friendsurls.txt', 'w')   
+    listsoffriends = open('friendsurls.txt', 'w') 
     for item in userinfo.get('response'):
         personid = str(item.get('id'))        # получаем ID пользователя
         with urllib.request.urlopen("https://api.vk.com/method/friends.get?user_id="+personid +
