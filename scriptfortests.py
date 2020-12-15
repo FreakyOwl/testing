@@ -6,13 +6,10 @@ import urllib.request
 import json
 
 def getdata(filename):
-    
     """
     this is a docstring too
     """
-    
     listofurls = open('filename', 'r')
-    
     domain = ''
     for line in listofurls:                 # получаем информацию о пользователях за один запрос
         domain = domain+line[15:len(line)-1]+','  # получаем короткое название из url
@@ -29,7 +26,7 @@ def getfriends():
     """
     also a docstring
     """
-    userinfo = getdata()
+    userinfo = getdata('123.txt')
     listsoffriends = open('friendsurls.txt', 'w')   
     for item in userinfo.get('response'):
         personid = str(item.get('id'))        # получаем ID пользователя
