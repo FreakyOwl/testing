@@ -26,7 +26,7 @@ def getfriends():
     also a docstring
     """
     userinfo = getdata('123.txt')
-    listsoffriends = open('friendsurls.txt', 'w') 
+    listsoffriends = open('friendsurls.txt', 'w')
     for item in userinfo.get('response'):
         personid = str(item.get('id'))        # получаем ID пользователя
         with urllib.request.urlopen("https://api.vk.com/method/friends.get?user_id="+personid +
