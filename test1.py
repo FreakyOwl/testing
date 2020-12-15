@@ -10,4 +10,5 @@ def test_exception():
 def test_fileformat():
     with open('123.txt', 'r') as listofurls:
         for line in listofurls:
+            assert line[:15] == 'https://vk.com/'
             assert line[-1] == '\n'
