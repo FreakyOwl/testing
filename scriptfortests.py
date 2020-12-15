@@ -5,13 +5,14 @@ this is a docstring
 import urllib.request
 import json
 
-listofurls = open('123.txt', 'r')
-
-def filefun():
+def getdata(filename):
+    
     """
     this is a docstring too
     """
-    listsoffriends = open('friendsurls.txt', 'w')
+    
+    listofurls = open('filename', 'r')
+    
     domain = ''
     for line in listofurls:                 # получаем информацию о пользователях за один запрос
         domain = domain+line[15:len(line)-1]+','  # получаем короткое название из url
@@ -20,6 +21,16 @@ def filefun():
    "&v=5.52&access_token=b1b6da65b1b6da65b1b6da6547b1c57304bb1b6b1b6da65eefec3e8bb3149f4bcc040dc")\
              as userurl:
         userinfo = json.load(userurl)
+    listofurls.close()
+    return userinfo
+
+def getfriends():  
+    
+    """
+    also a docstring
+    """
+    userinfo = getdata()
+    listsoffriends = open('friendsurls.txt', 'w')   
     for item in userinfo.get('response'):
         personid = str(item.get('id'))        # получаем ID пользователя
         with urllib.request.urlopen("https://api.vk.com/method/friends.get?user_id="+personid +
@@ -30,5 +41,4 @@ def filefun():
             friendurl = "https://vk.com/id"+str(friendid)
             listsoffriends.write(friendurl + '\n')
         listsoffriends.write('\n')
-    listofurls.close()
     listsoffriends.close()
