@@ -10,17 +10,14 @@ jobs:
       - checkout
       - python/install-deps
       - run:
-          command: chmod +x scriptfortests.py
-          name: Permission
-      - run:       
-          command: ./scriptfortests.py test
-          name: Test
-      - run:
           name: Run Linting
           command: pylint scriptfortests.py
       - run:
           name: Testing
-          command: pytest test1.py  
+          command: pytest test1.py 
+      - run:       
+          name: Launch
+          command: python scriptfortests.py
              
 workflows:
   main:
