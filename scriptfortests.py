@@ -38,3 +38,6 @@ def getfriends():
             listsoffriends.write(friendurl + '\n')
         listsoffriends.write('\n')
     listsoffriends.close()
+    
+if __name__ == __'main'__:
+    getfriends()
