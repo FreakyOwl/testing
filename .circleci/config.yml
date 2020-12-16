@@ -10,7 +10,7 @@ jobs:
       - checkout
       - python/install-deps
       - run:
-          command: chmod +x manage.py
+          command: chmod +x scriptfortests.py
           name: Permission
       - run:       
           command: ./scriptfortests.py
