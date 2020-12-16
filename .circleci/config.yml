@@ -13,7 +13,7 @@ jobs:
           command: chmod +x manage.py
           name: Permission
       - run:       
-          command: ./manage.py test
+          command: ./scriptfortests.py
           name: Test
       - run:
           name: Run Linting
