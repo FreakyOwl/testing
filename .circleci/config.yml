@@ -5,7 +5,8 @@ orbs:
 
 jobs:
   build-and-test:
-    executor: python/default:3.7
+    executor: python/default
+    version: '3.7'
     steps:
       - checkout
       - python/install-deps
