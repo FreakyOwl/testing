@@ -7,7 +7,7 @@ jobs:
   build-and-test:
     executor: docker
     docker:
-      - image: python: 3.3.5
+      - image: python 3.3.5
     steps:
       - checkout
       - python/install-deps
