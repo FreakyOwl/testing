@@ -22,9 +22,9 @@ jobs:
       - run:       
           name: Launch
           command: python main_script.py
-  build-and-test-3-3-3:
+  build-and-test-3-3:
     docker:
-      - image: cimg/python:3.3.3
+      - image: cimg/python:3.3
     steps:
       - checkout
       - python/install-deps
@@ -45,4 +45,4 @@ workflows:
   main:
     jobs:
       - build-and-test-3-7
-      - build-and-test-3-3-3
+      - build-and-test-3-3
