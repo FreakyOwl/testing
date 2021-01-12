@@ -4,9 +4,9 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
-  build-and-test-3-7:
+  build-and-test-3-9:
     docker:
-      - image: cimg/python:3.7
+      - image: cimg/python:3.9
     steps:
       - checkout
       - python/install-deps
@@ -22,9 +22,9 @@ jobs:
       - run:       
           name: Launch
           command: python main_script.py
-  build-and-test-3-5:
+  build-and-test-3-6:
     docker:
-      - image: cimg/python:3.5
+      - image: cimg/python:3.6
     steps:
       - checkout
       - python/install-deps
@@ -44,5 +44,5 @@ jobs:
 workflows:
   main:
     jobs:
-      - build-and-test-3-7
-      - build-and-test-3-5
+      - build-and-test-3-9
+      - build-and-test-3-6
