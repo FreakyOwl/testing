@@ -21,7 +21,7 @@ jobs:
           command: pytest main_script_test.py 
       - run:       
           name: Launch
-          command: ./main_script.py
+          command: python main_script.py
              
 workflows:
   main:
