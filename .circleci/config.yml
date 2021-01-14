@@ -11,9 +11,6 @@ jobs:
       - checkout
       - python/install-deps
       - run:
-          name: Git Commands
-          command: git update-index --chmod=+x main_script.py
-      - run:
           name: Run Linting
           command: pylint main_script.py
       - run:
@@ -21,7 +18,7 @@ jobs:
           command: pytest main_script_test.py 
       - run:       
           name: Launch
-          command: python main_script.py
+          command: ./main_script.py
   build-and-test-3-6:
     docker:
       - image: cimg/python:3.6
