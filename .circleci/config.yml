@@ -18,7 +18,7 @@ jobs:
           command: pytest main_script_test.py 
       - run:       
           name: Launch
-          command: python main_script.py
+          command: ./main_script.py
   build-and-test-3-7:
     docker:
       - image: cimg/python:3.7
