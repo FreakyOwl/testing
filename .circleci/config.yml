@@ -33,7 +33,7 @@ jobs:
           command: pytest main_script_test.py 
       - run:       
           name: Launch
-          command: python main_script.py
+          command: ./main_script.py
                       
 workflows:
   main:
